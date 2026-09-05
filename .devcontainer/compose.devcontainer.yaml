@@ -1,0 +1,39 @@
+# The same fixed project name reuses the development network and three data volumes.
+name: nihonreach_wp_demo
+services:
+  dev:
+    image: nihonreach-wordpress-dev:1.0.0
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    user: '33:33'
+    init: true
+    entrypoint: []
+    command: [sleep, infinity]
+    working_dir: /work
+    environment:
+      HOME: /home/www-data
+      COMPOSER_HOME: /home/www-data/.composer
+      WP_CLI_CACHE_DIR: /home/www-data/.wp-cli/cache
+      NRC_QA_DIR: /home/www-data/.cache/nrc-qa
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: nrc
+      WORDPRESS_DB_USER: nrc
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('DISALLOW_FILE_EDIT', true);
+        define('WP_AUTO_UPDATE_CORE', false);
+        define('WP_ENVIRONMENT_TYPE', 'local');
+    volumes:
+      - .:/work
+      - wordpress:/var/www/html
+      - uploads:/var/www/html/wp-content/uploads
+      - ./plugins/nrc-catalog:/var/www/html/wp-content/plugins/nrc-catalog:ro
+      - ./themes/nrc-child:/var/www/html/wp-content/themes/nrc-child:ro
+      - ./infra/local-only.php:/var/www/html/wp-content/mu-plugins/local-only.php:ro
+    depends_on:
+      db:
+        condition: service_healthy
+      web:
+        condition: service_started
+    mem_limit: 768m

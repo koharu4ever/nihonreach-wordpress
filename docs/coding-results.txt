@@ -1,0 +1,4 @@
+2026-09-05: PHPCS exited 0.
+PHPCS 3.13.6; WPCS 3.4.1.
+Ruleset: tests/phpcs.xml; input validation, escaping, SQL and discouraged PHP functions.
+No errors or warnings in the selected PHP rules. This is not a full WPCS-style audit.

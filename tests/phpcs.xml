@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="NRC WordPress security checks">
+  <description>Focused WordPress security/output checks; integration tests cover model rules and nonce flow.</description>
+  <arg name="extensions" value="php"/>
+  <rule ref="WordPress.Security.EscapeOutput"/>
+  <rule ref="WordPress.Security.ValidatedSanitizedInput"/>
+  <rule ref="WordPress.DB.PreparedSQL"/>
+  <rule ref="WordPress.PHP.DiscouragedPHPFunctions"/>
+</ruleset>

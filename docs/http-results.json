@@ -1,0 +1,98 @@
+[
+  {
+    "Path": "/",
+    "Status": 200,
+    "Title": "NihonReach &#8211; 精密工具目录 · Portfolio Demo",
+    "CanonicalCount": 1,
+    "Cards": 3,
+    "HiddenModel": false
+  },
+  {
+    "Path": "/products/",
+    "Status": 200,
+    "Title": "产品 &#8211; NihonReach",
+    "CanonicalCount": 0,
+    "Cards": 9,
+    "HiddenModel": false
+  },
+  {
+    "Path": "/products/page/2/",
+    "Status": 200,
+    "Title": "产品 &#8211; 第 2 页 &#8211; NihonReach",
+    "CanonicalCount": 0,
+    "Cards": 3,
+    "HiddenModel": false
+  },
+  {
+    "Path": "/product-category/milling/",
+    "Status": 200,
+    "Title": "铣削工具 &#8211; NihonReach",
+    "CanonicalCount": 0,
+    "Cards": 6,
+    "HiddenModel": false
+  },
+  {
+    "Path": "/product-category/coming-soon/",
+    "Status": 200,
+    "Title": "待上新系列 &#8211; NihonReach",
+    "CanonicalCount": 0,
+    "Cards": 0,
+    "HiddenModel": false
+  },
+  {
+    "Path": "/product/em-06-4f/",
+    "Status": 200,
+    "Title": "四刃平底立铣刀 6mm &#8211; NihonReach",
+    "CanonicalCount": 1,
+    "Cards": 0,
+    "HiddenModel": false
+  },
+  {
+    "Path": "/about/",
+    "Status": 200,
+    "Title": "关于项目 &#8211; NihonReach",
+    "CanonicalCount": 1,
+    "Cards": 0,
+    "HiddenModel": false
+  },
+  {
+    "Path": "/contact/",
+    "Status": 200,
+    "Title": "联系说明 &#8211; NihonReach",
+    "CanonicalCount": 1,
+    "Cards": 0,
+    "HiddenModel": false
+  },
+  {
+    "Path": "/not-a-real-page/",
+    "Status": 404,
+    "Title": "未找到页面 &#8211; NihonReach",
+    "CanonicalCount": 0,
+    "Cards": 0,
+    "HiddenModel": false
+  },
+  {
+    "Path": "/product/restricted-draft/",
+    "Status": 404,
+    "Title": "未找到页面 &#8211; NihonReach",
+    "CanonicalCount": 0,
+    "Cards": 0,
+    "HiddenModel": false
+  },
+  {
+    "Path": "/product/restricted-private/",
+    "Status": 404,
+    "Title": "未找到页面 &#8211; NihonReach",
+    "CanonicalCount": 0,
+    "Cards": 0,
+    "HiddenModel": false
+  },
+  {
+    "Path": "/product/restricted-publish/",
+    "Status": 200,
+    "Title": "密码保护测试产品 &#8211; NihonReach",
+    "CanonicalCount": 1,
+    "Cards": 0,
+    "HiddenModel": false
+  }
+]

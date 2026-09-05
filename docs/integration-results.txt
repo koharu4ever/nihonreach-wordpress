@@ -1,0 +1,37 @@
+PASS: CPT registered
+PASS: taxonomy connected
+PASS: valid model persisted through save_post
+PASS: invalid nonce cannot modify
+PASS: invalid format preserves original
+PASS: invalid value queues user-scoped feedback
+PASS: notice truthfully describes partial save
+PASS: array input rejected
+PASS: overlength rejected
+PASS: missing field preserves original (quick edit)
+PASS: explicit empty clears field
+PASS: subscriber edit capability
+PASS: subscriber publish capability
+PASS: subscriber delete someone else product capability
+PASS: valid nonce without capability rejected
+PASS: contributor edit capability
+PASS: contributor publish capability
+PASS: contributor delete someone else product capability
+PASS: author edit capability
+PASS: author publish capability
+PASS: author delete someone else product capability
+PASS: editor edit capability
+PASS: editor publish capability
+PASS: editor delete someone else product capability
+PASS: deactivation preserves data
+PASS: reactivation preserves data
+PASS: public archive HTTP 200
+PASS: archive first page has 9 public products
+PASS: restricted products excluded
+PASS: draft detail cannot disclose model/body
+PASS: draft correct HTTP status
+PASS: private detail cannot disclose model/body
+PASS: private correct HTTP status
+PASS: publish detail cannot disclose model/body
+PASS: publish correct HTTP status
+PASS: second page contains remaining 3 products
+Success: 36 assertions passed in isolated test database.

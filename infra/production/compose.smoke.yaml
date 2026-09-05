@@ -1,0 +1,8 @@
+# Only used by scripts/Test-Production.ps1 on the local computer.
+services:
+  web:
+    image: nihonreach-wordpress:production-local
+    ports:
+      - '127.0.0.1:${NRC_SMOKE_PORT}:80'
+    environment:
+      NRC_LOCAL_SMOKE_TEST: '1'

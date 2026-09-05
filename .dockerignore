@@ -1,0 +1,6 @@
+.env
+.local
+backups
+.git
+.cache
+docs/screenshots

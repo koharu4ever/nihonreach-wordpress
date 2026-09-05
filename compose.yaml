@@ -1,0 +1,64 @@
+name: ${COMPOSE_PROJECT_NAME:-nihonreach_wp_demo}
+services:
+  db:
+    image: mysql:8.4.11@sha256:b3b90af2a6552ae30c266fdb7d5dd55f3afb72404bb78d37fe8a23eb857fd3fb
+    environment:
+      MYSQL_DATABASE: nrc
+      MYSQL_USER: nrc
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Generate .env first}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Generate .env first}
+    volumes:
+      - database:/var/lib/mysql
+      - ./backups:/backups
+    healthcheck:
+      test: [CMD-SHELL, 'MYSQL_PWD="$$MYSQL_PASSWORD" mysql -h 127.0.0.1 -u nrc nrc -e "SELECT 1" >/dev/null']
+      interval: 5s
+      timeout: 5s
+      retries: 40
+    mem_limit: 768m
+  web:
+    image: wordpress:7.1-php8.3-apache@sha256:5a93c470ae8220fddf71f6ebe3bc94e615ddc2ae4d9810f795b830fb11c41a17
+    ports:
+      - '127.0.0.1:${HTTP_PORT:-8081}:80'
+    environment: &wp-env
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: nrc
+      WORDPRESS_DB_USER: nrc
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('DISALLOW_FILE_EDIT', true);
+        define('WP_AUTO_UPDATE_CORE', false);
+        define('WP_ENVIRONMENT_TYPE', 'local');
+    volumes: &wp-volumes
+      - wordpress:/var/www/html
+      - uploads:/var/www/html/wp-content/uploads
+      - ./plugins/nrc-catalog:/var/www/html/wp-content/plugins/nrc-catalog:ro
+      - ./themes/nrc-child:/var/www/html/wp-content/themes/nrc-child:ro
+      - ./infra/local-only.php:/var/www/html/wp-content/mu-plugins/local-only.php:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    mem_limit: 512m
+  cli:
+    image: wordpress:cli-php8.3@sha256:2b5e9d4d3e51909dca1aaa4732e9f5e5bf0377c2114dbd8ff39f060bff202586
+    user: '33:33'
+    environment:
+      <<: *wp-env
+      NRC_ADMIN_USER: ${ADMIN_USER}
+      NRC_ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      WP_CLI_CACHE_DIR: /tmp/wp-cli-cache
+    volumes:
+      - wordpress:/var/www/html
+      - uploads:/var/www/html/wp-content/uploads
+      - ./plugins/nrc-catalog:/var/www/html/wp-content/plugins/nrc-catalog:ro
+      - ./themes/nrc-child:/var/www/html/wp-content/themes/nrc-child:ro
+      - ./infra/local-only.php:/var/www/html/wp-content/mu-plugins/local-only.php:ro
+      - ./scripts:/work/scripts:ro
+      - ./tests:/work/tests:ro
+      - ./assets:/work/assets:ro
+      - ./backups:/backups
+    profiles: [tools]
+volumes:
+  database:
+  wordpress:
+  uploads:

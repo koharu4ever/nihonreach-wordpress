@@ -1,0 +1,216 @@
+{
+    "products": [
+        {
+            "id": 5,
+            "title": "四刃平底立铣刀 6mm",
+            "status": "publish",
+            "protected": false,
+            "model": "EM-06-4F",
+            "terms": [
+                "milling"
+            ],
+            "thumbnail": 6
+        },
+        {
+            "id": 7,
+            "title": "球头立铣刀 R3",
+            "status": "publish",
+            "protected": false,
+            "model": "BM-R3",
+            "terms": [
+                "milling"
+            ],
+            "thumbnail": 8
+        },
+        {
+            "id": 9,
+            "title": "硬质合金钻头 8mm",
+            "status": "publish",
+            "protected": false,
+            "model": "DR-08",
+            "terms": [
+                "drilling"
+            ],
+            "thumbnail": 10
+        },
+        {
+            "id": 11,
+            "title": "机用铰刀 10mm",
+            "status": "publish",
+            "protected": false,
+            "model": "RM-10",
+            "terms": [
+                "drilling"
+            ],
+            "thumbnail": 12
+        },
+        {
+            "id": 13,
+            "title": "方肩铣刀 50mm",
+            "status": "publish",
+            "protected": false,
+            "model": "SM-50",
+            "terms": [
+                "milling"
+            ],
+            "thumbnail": 14
+        },
+        {
+            "id": 15,
+            "title": "外圆车刀杆",
+            "status": "publish",
+            "protected": false,
+            "model": "TH-20",
+            "terms": [
+                "turning"
+            ],
+            "thumbnail": 16
+        },
+        {
+            "id": 17,
+            "title": "精加工立铣刀 4mm",
+            "status": "publish",
+            "protected": false,
+            "model": "EM-04-F",
+            "terms": [
+                "milling"
+            ],
+            "thumbnail": 6
+        },
+        {
+            "id": 18,
+            "title": "球头立铣刀 R2",
+            "status": "publish",
+            "protected": false,
+            "model": "BM-R2",
+            "terms": [
+                "milling"
+            ],
+            "thumbnail": 8
+        },
+        {
+            "id": 19,
+            "title": "短刃钻头 6mm",
+            "status": "publish",
+            "protected": false,
+            "model": "DR-06-S",
+            "terms": [
+                "drilling"
+            ],
+            "thumbnail": 10
+        },
+        {
+            "id": 20,
+            "title": "精密铰刀 8mm",
+            "status": "publish",
+            "protected": false,
+            "model": "RM-08",
+            "terms": [
+                "drilling"
+            ],
+            "thumbnail": 12
+        },
+        {
+            "id": 21,
+            "title": "轻切削铣刀 40mm",
+            "status": "publish",
+            "protected": false,
+            "model": "SM-40",
+            "terms": [
+                "milling"
+            ],
+            "thumbnail": 14
+        },
+        {
+            "id": 22,
+            "title": "精加工车刀杆",
+            "status": "publish",
+            "protected": false,
+            "model": "TH-16-F",
+            "terms": [
+                "turning"
+            ],
+            "thumbnail": 16
+        },
+        {
+            "id": 23,
+            "title": "草稿测试产品",
+            "status": "draft",
+            "protected": false,
+            "model": "HIDDEN-DRAFT",
+            "terms": [],
+            "thumbnail": 0
+        },
+        {
+            "id": 24,
+            "title": "私有测试产品",
+            "status": "private",
+            "protected": false,
+            "model": "HIDDEN-PRIVATE",
+            "terms": [],
+            "thumbnail": 0
+        },
+        {
+            "id": 25,
+            "title": "密码保护测试产品",
+            "status": "publish",
+            "protected": true,
+            "model": "HIDDEN-PUBLISH",
+            "terms": [],
+            "thumbnail": 0
+        }
+    ],
+    "categories": [
+        [
+            "drilling",
+            "孔加工工具",
+            4
+        ],
+        [
+            "coming-soon",
+            "待上新系列",
+            0
+        ],
+        [
+            "turning",
+            "车削工具",
+            2
+        ],
+        [
+            "milling",
+            "铣削工具",
+            6
+        ]
+    ],
+    "media": [
+        {
+            "id": 6,
+            "sha256": "48e4208e1a03923193759a0671c45da75387947ec69add6b1de6f8c03b5c749c"
+        },
+        {
+            "id": 8,
+            "sha256": "1ad063b02330e9c4cc05f2b8182ab75c2f78fb13b978ef2fb4576342b884cf98"
+        },
+        {
+            "id": 10,
+            "sha256": "cf625927094f62e32e6232aa49de341ac2deaa6294babc57b6a7705dfd41ce6a"
+        },
+        {
+            "id": 12,
+            "sha256": "0c18aa9d1c48897f6dff60c4d3a3951be533b609b18d0a77c7337fea3f90d580"
+        },
+        {
+            "id": 14,
+            "sha256": "a5db6acf69a3a29996f719f8cff7003527d3062e8265cab68af45c187b89e74c"
+        },
+        {
+            "id": 16,
+            "sha256": "fc72561b42e5b8de91a3f39dcfb56df491dc9099f8cf1a3e073cd929e180ab2c"
+        }
+    ],
+    "theme": "nrc-child",
+    "menu": {
+        "primary": 6
+    },
+    "front": "26"
+}

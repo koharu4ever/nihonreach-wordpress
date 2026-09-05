@@ -1,0 +1,48 @@
+# Coolify owns the project name, proxy network and TLS. No host ports or dev mounts.
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: nrc
+      WORDPRESS_DB_USER: nrc
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD:?Set a production database password}
+      NRC_SITE_URL: ${NRC_SITE_URL:-https://wp.kral-koharu.com}
+      NRC_AUTH_SECRET: ${NRC_AUTH_SECRET:?Set a stable random secret}
+      NRC_ADMIN_USER: ${NRC_ADMIN_USER:-}
+      NRC_ADMIN_PASSWORD: ${NRC_ADMIN_PASSWORD:-}
+      NRC_ADMIN_EMAIL: ${NRC_ADMIN_EMAIL:-}
+    volumes:
+      - uploads:/opt/nrc/site/wp-content/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, curl, --fail, --silent, http://127.0.0.1/health.php]
+      interval: 15s
+      timeout: 5s
+      retries: 6
+      start_period: 30s
+    restart: unless-stopped
+    mem_limit: 512m
+  db:
+    image: mysql:8.4.11@sha256:b3b90af2a6552ae30c266fdb7d5dd55f3afb72404bb78d37fe8a23eb857fd3fb
+    environment:
+      MYSQL_DATABASE: nrc
+      MYSQL_USER: nrc
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Set a production root password}
+    volumes:
+      - database:/var/lib/mysql
+    healthcheck:
+      test: [CMD-SHELL, 'MYSQL_PWD="$$MYSQL_PASSWORD" mysql -h 127.0.0.1 -u nrc nrc -e "SELECT 1" >/dev/null']
+      interval: 5s
+      timeout: 5s
+      retries: 40
+    restart: unless-stopped
+    mem_limit: 768m
+volumes:
+  database:
+  uploads:

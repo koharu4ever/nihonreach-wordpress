@@ -1,0 +1,11 @@
+No syntax errors detected in /work/scripts/seed.php
+No syntax errors detected in /work/scripts/snapshot.php
+No syntax errors detected in /work/tests/integration.php
+No syntax errors detected in /var/www/html/wp-content/plugins/nrc-catalog/nrc-catalog.php
+No syntax errors detected in /var/www/html/wp-content/themes/nrc-child/404.php
+No syntax errors detected in /var/www/html/wp-content/themes/nrc-child/archive-nrc_product.php
+No syntax errors detected in /var/www/html/wp-content/themes/nrc-child/front-page.php
+No syntax errors detected in /var/www/html/wp-content/themes/nrc-child/functions.php
+No syntax errors detected in /var/www/html/wp-content/themes/nrc-child/page.php
+No syntax errors detected in /var/www/html/wp-content/themes/nrc-child/single-nrc_product.php
+No syntax errors detected in /var/www/html/wp-content/themes/nrc-child/taxonomy-nrc_category.php

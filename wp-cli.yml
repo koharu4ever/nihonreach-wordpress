@@ -1,0 +1,2 @@
+# Run WP-CLI from the project directory while WordPress remains in its shared volume.
+path: /var/www/html

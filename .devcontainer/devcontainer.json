@@ -1,0 +1,30 @@
+{
+    "name": "NihonReach WordPress",
+    "dockerComposeFile": ["../compose.yaml", "compose.devcontainer.yaml"],
+    "service": "dev",
+    "runServices": ["db", "web", "dev"],
+    "workspaceFolder": "/work",
+    "remoteUser": "www-data",
+    "updateRemoteUserUID": false,
+    "shutdownAction": "stopCompose",
+    "overrideCommand": false,
+    "initializeCommand": ["powershell.exe", "-NoProfile", "-Command", "if (-not (Test-Path -LiteralPath '.env')) { throw 'First run in host PowerShell 7: pwsh -NoProfile -File scripts/setup.ps1 ; then Reopen in Container.' }; Write-Output 'Reusing the existing nihonreach_wp_demo environment.'"],
+    "postCreateCommand": "bash .devcontainer/post-create.sh",
+    "otherPortsAttributes": { "onAutoForward": "ignore" },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bmewburn.vscode-intelephense-client",
+                "EditorConfig.EditorConfig"
+            ],
+            "settings": {
+                "files.eol": "\n",
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "php.validate.executablePath": "/usr/local/bin/php",
+                "intelephense.environment.includePaths": ["/var/www/html"],
+                "remote.autoForwardPorts": false,
+                "remote.restoreForwardedPorts": false
+            }
+        }
+    }
+}

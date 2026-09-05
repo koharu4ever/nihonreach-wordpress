@@ -1,0 +1,5 @@
+.env
+.local/
+backups/
+vendor/
+.cache/
